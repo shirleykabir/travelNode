@@ -22,14 +22,14 @@ def dijsktra(graph, initial):
   while nodes:          #frontier/nodes is not empty
     min_node = None
     for node in nodes:
-      print "visited: ", visited
+      # print "visited: ", visited
       if node in visited:
-          print "1"
+          # print "1"
           if min_node is None:
-              print "2"
+              # print "2"
               min_node = node    #simply add node to start somewhere
           elif visited[node] < visited[min_node]:
-              print "3"
+              # print "3"
               min_node = node
 
     if min_node is None:
@@ -37,8 +37,8 @@ def dijsktra(graph, initial):
 
     nodes.remove(min_node) #remove f from F
     current_weight = visited[min_node]
-    print "current_weight: ", current_weight
-    print "min node: ", min_node
+    # print "current_weight: ", current_weight
+    # print "min node: ", min_node
 
     for edge in graph.edges[min_node]: #for each edge(f,w)
       if edge not in visited:
@@ -90,4 +90,4 @@ g.add_edge('c','a',2)
 g.add_edge('c','d',3)
 g.add_edge('d','c',3)
 '''
-print(dijsktra(g,'A'))
+# print(dijsktra(g,'A'))

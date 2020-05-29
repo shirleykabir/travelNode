@@ -54,4 +54,4 @@ if __name__ == "__main__":
     lst_test = [('232 East Ave, Ithaca, NY 14850, USA', '111 Dryden Rd, Ithaca, NY 14850, USA', 120, 9.0, 849, 0.7)]
     #print lst_test[0][0]
     time = [('232 East Ave, Ithaca, NY 14850, USA', '50'), ('111 Dryden Rd, Ithaca, NY 14850, USA', '50')]
-    print time[0][1]
+    print(time[0][1])

@@ -14,10 +14,10 @@ class Graph():
     # A utility function to print the constructed MST stored in parent[]
     def printMST(self, parent):
         info = []
-        print "Edge \tWeight"
+        print("Edge \tWeight")
         for i in range(0,self.V):
             info.append((parent[i], i, self.graph[i][parent[i]]))
-            print parent[i],"-",i,"\t",self.graph[i][ parent[i] ]
+            print(parent[i],"-",i,"\t",self.graph[i][ parent[i] ])
                   #parent[i] = beginning point
         #    route.append(parent[i])
         #return route
@@ -28,7 +28,7 @@ class Graph():
     def minKey(self, key, mstSet):
 
         # Initilaize min value
-        min = sys.maxint
+        min = sys.maxsize
 
         for v in range(self.V):
             if key[v] < min and mstSet[v] == False:
@@ -42,7 +42,7 @@ class Graph():
     def primMST(self):
 
         #Key values used to pick minimum weight edge in cut
-        key = [sys.maxint] * self.V
+        key = [sys.maxsize] * self.V
         parent = [None] * self.V # Array to store constructed MST
         key[0] = 0   # Make key 0 so that this vertex is picked as first vertex
         mstSet = [False] * self.V
@@ -128,7 +128,7 @@ def construct_whole(data1, time, own_vehicle, max_time, activity_level): #num_lo
         for j in range(len(time)): #for every column
             est_loc_time = time[j][1]
             #print type(time)
-            if (((own_vehicle == 'Yes') | (activity_level < 100)) | (est_loc_time > 5)): #loc_est_time
+            if (((own_vehicle == 'Yes') | (activity_level < 100)) | (int(est_loc_time) > 5)): #loc_est_time
                 t = data1[0][3] #Uber time
                 a = ["Uber", est_loc_time, data1[0][5], data1[0][2]]
                 #using_uber.append(data1[0][2])
@@ -183,7 +183,7 @@ def construct_whole(data1, time, own_vehicle, max_time, activity_level): #num_lo
     s_legs = s_legs + ','
     more = '"totaltime" :' + str(acc_time) + ',"totaldistance":' + str(totaldistance) + ',"totalcost" :' + str(totalcost) + ', "warning": "false"}'
     final = str(s_locs) + str(s_legs) + more
-    print final
+    print(final)
     return final
     #   "totalcost": ' + totalcost + ',
     #   "warning": ' + warning + '
@@ -233,7 +233,7 @@ def construct_whole(data1, time, own_vehicle, max_time, activity_level): #num_lo
     ending = ending + '}"'
 
     finish =  leg_info + leg1 + leg2 + leg3 + leg4 + ending
-    print finish
+    print(finish)
 
 data1 = [(u'232 East Ave, Ithaca, NY 14850, USA', u'111 Dryden Rd, Ithaca, NY 14850, USA', 120, 9.0, 849, 0.7)]
 time = [(u'232 East Ave, Ithaca, NY 14850, USA', u'50'), (u'111 Dryden Rd, Ithaca, NY 14850, USA', u'50')]

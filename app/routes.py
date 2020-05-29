@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect
 from app import app
 from flask import render_template
 from flask import request, jsonify
-from generate import *
+from .generate import *
 import json
 
 results = "";
@@ -19,7 +19,7 @@ def display():
 def route():
     result = request.form
     inputs = request.form.to_dict()
-    print inputs
+    print(inputs)
     google_input = calcLongLat(inputs)
     times = generateTimeParam(inputs, google_input)
     jia_output = calcUberWalking(google_input)

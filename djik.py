@@ -38,10 +38,10 @@ def dijkstra(adj, costs, s, t):
         Qd[v] = item
 
     while Q:
-        print Q
+        # print Q
         cost, parent, u = heapq.heappop(Q)
         if u not in visited_set:
-            print 'visit:', u
+            # print 'visit:', u
             p[u]= parent
             visited_set.add(u)
             if u == t:
@@ -99,9 +99,9 @@ if __name__=='__main__':
     predecessors, min_cost = dijkstra(adj, cost, s, t)
     c = t
     path = [c]
-    print 'min cost:', min_cost
+    # print 'min cost:', min_cost
     while predecessors.get(c):
         path.insert(0, predecessors[c])
         c = predecessors[c]
 
-    print 'shortest path:', path
+    # print 'shortest path:', path

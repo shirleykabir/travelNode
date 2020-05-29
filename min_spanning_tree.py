@@ -14,9 +14,9 @@ class Graph():
     # A utility function to print the constructed MST stored in parent[]
     def printMST(self, parent):
         route = []
-        print "Edge \tWeight"
+        print("Edge \tWeight")
         for i in range(1,self.V):
-            print parent[i],"-",i,"\t",self.graph[i][ parent[i] ]
+            print(parent[i],"-",i,"\t",self.graph[i][ parent[i] ])
             route.append(parent[i])
         return route
 
@@ -160,7 +160,7 @@ def construct_whole(data1, time, own_vehicle, max_time, activity_level): #num_lo
     ending = ending + '}"'
 
     finish =  leg_info + leg1 + leg2 + leg3 + leg4 + ending
-    print finish
+    print(finish)
 
 construct_whole(data1, time, own_vehicle, max_time, activity_level)
 #g.graph = matrix

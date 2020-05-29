@@ -2,9 +2,9 @@ from flask import Flask,jsonify
 import requests
 import simplejson
 import json
-from uber import *
-from google_walking import *
-from min_spanning_tree import *
+from .uber import *
+from .google_walking import *
+from .min_spanning_tree import *
 
 def generateTimeParam(data, addr):
     times = []
@@ -23,7 +23,7 @@ def calcLongLat(data):
     i = 1
     while i < 6:
         string = "location" + str(i) #location1 field in json
-        print string
+        print(string)
         ts = "location_time" + str(i) #location1 field in json
         loc = data[string] #get from json address
         if loc: #if location was entered
